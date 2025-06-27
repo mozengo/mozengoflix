@@ -1,0 +1,17 @@
+[
+  {
+    "titulo": "Exemplo de Filme 1",
+    "imagem": "https://image.tmdb.org/t/p/w500/1.jpg",
+    "descricao": "Descrição do primeiro filme."
+  },
+  {
+    "titulo": "Exemplo de Série 2",
+    "imagem": "https://image.tmdb.org/t/p/w500/2.jpg",
+    "descricao": "Descrição da segunda série."
+  },
+  {
+    "titulo": "Exemplo de Filme 3",
+    "imagem": "https://image.tmdb.org/t/p/w500/3.jpg",
+    "descricao": "Descrição do terceiro filme."
+  }
+]
