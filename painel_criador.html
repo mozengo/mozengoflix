@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Painel do Criador - MozengoFlix</title>
+  <title>Painel do Criador - Automático</title>
   <style>
     body {
       background-color: #111;
@@ -10,85 +10,42 @@
       font-family: Arial, sans-serif;
       padding: 20px;
     }
-    h1 {
-      color: #e50914;
-    }
-    .form-section {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
-      margin-bottom: 30px;
-    }
-    input, textarea, button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-    button {
-      background-color: #e50914;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #b00610;
-    }
+    h1 { color: #e50914; }
     .card {
       background: #222;
       padding: 10px;
       margin: 10px 0;
       border-radius: 8px;
     }
+    img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
-  <h1>🎥 Painel do Criador</h1>
-  <p>Gerencie seus filmes e séries aqui.</p>
-
-  <div class="form-section">
-    <h2>Adicionar Novo Filme</h2>
-    <input type="text" id="titulo" placeholder="Título do Filme">
-    <input type="text" id="imagem" placeholder="URL da imagem (capa)">
-    <textarea id="descricao" placeholder="Descrição..."></textarea>
-    <button onclick="adicionarFilme()">Adicionar</button>
-  </div>
-
-  <div>
-    <h2>Filmes Adicionados</h2>
-    <div id="listaFilmes"></div>
-  </div>
+  <h1>🎥 Painel do Criador (Automático)</h1>
+  <p>Filmes carregados de um arquivo JSON:</p>
+  <div id="listaFilmes"></div>
 
   <script>
-    const lista = document.getElementById("listaFilmes");
-
-    function adicionarFilme() {
-      const titulo = document.getElementById("titulo").value;
-      const imagem = document.getElementById("imagem").value;
-      const descricao = document.getElementById("descricao").value;
-
-      if (!titulo || !imagem) {
-        alert("Preencha o título e a imagem!");
-        return;
-      }
-
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = \`
-        <strong>\${titulo}</strong><br>
-        <img src="\${imagem}" alt="\${titulo}" style="width:100%; max-height:200px; object-fit:cover;"><br>
-        <p>\${descricao}</p>
-      \`;
-
-      lista.appendChild(card);
-
-      // Limpar inputs
-      document.getElementById("titulo").value = "";
-      document.getElementById("imagem").value = "";
-      document.getElementById("descricao").value = "";
-    }
+    fetch('filmes.json')
+      .then(res => res.json())
+      .then(data => {
+        const lista = document.getElementById("listaFilmes");
+        data.forEach(filme => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = \`
+            <strong>\${filme.titulo}</strong><br>
+            <img src="\${filme.imagem}" alt="Capa"><br>
+            <p>\${filme.descricao}</p>
+          \`;
+          lista.appendChild(card);
+        });
+      });
   </script>
 </body>
 </html>
