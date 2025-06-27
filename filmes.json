@@ -1,17 +1,17 @@
 [
   {
-    "titulo": "Exemplo de Filme 1",
-    "imagem": "https://image.tmdb.org/t/p/w500/1.jpg",
-    "descricao": "Descrição do primeiro filme."
+    "titulo": "O Poderoso Chefão",
+    "imagem": "https://image.tmdb.org/t/p/w500/eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg",
+    "descricao": "Um drama épico sobre a máfia italiana nos EUA."
   },
   {
-    "titulo": "Exemplo de Série 2",
-    "imagem": "https://image.tmdb.org/t/p/w500/2.jpg",
-    "descricao": "Descrição da segunda série."
+    "titulo": "Homem-Aranha: Sem Volta Para Casa",
+    "imagem": "https://image.tmdb.org/t/p/w500/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg",
+    "descricao": "Peter Parker lida com o multiverso em colapso."
   },
   {
-    "titulo": "Exemplo de Filme 3",
-    "imagem": "https://image.tmdb.org/t/p/w500/3.jpg",
-    "descricao": "Descrição do terceiro filme."
+    "titulo": "Barbie",
+    "imagem": "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "descricao": "A boneca mais famosa do mundo ganha vida em uma aventura única."
   }
 ]
