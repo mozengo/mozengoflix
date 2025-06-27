@@ -11,10 +11,6 @@ header {
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-}
-
 #search {
   padding: 15px;
   text-align: center;
@@ -41,7 +37,7 @@ header h1 {
   background-color: #1e1e1e;
   border-radius: 10px;
   overflow: hidden;
-  width: 160px;
+  width: 180px;
   text-align: center;
   transition: transform 0.2s;
 }
@@ -57,13 +53,35 @@ header h1 {
 }
 
 .card h3 {
-  padding: 10px;
+  padding: 10px 5px 5px;
+  font-size: 15px;
+}
+
+.card button {
+  margin: 5px;
+  padding: 5px 10px;
   font-size: 14px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.qr {
+  width: 150px;
+  margin: 15px auto;
+  display: block;
+}
+
+#doacao {
+  text-align: center;
+  padding: 20px;
 }
 
 footer {
   background-color: #000;
   text-align: center;
   padding: 15px;
-  color: #777;
+  color: #999;
 }

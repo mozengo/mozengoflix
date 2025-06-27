@@ -1,22 +1,41 @@
 const filmes = [
-  { nome: "Mozengo: O Filme", imagem: "img/filme1.jpg" },
-  { nome: "A Vingança do Mozengo", imagem: "img/filme2.jpg" },
-  { nome: "Série: Mozengo em Apuros", imagem: "img/serie1.jpg" },
-  { nome: "Comédia Mozenga", imagem: "img/serie2.jpg" },
+  {
+    nome: "Mozengo: O Filme",
+    imagem: "img/filme1.jpg",
+    trailer: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    views: 0
+  },
+  {
+    nome: "Mozengo em Apuros",
+    imagem: "img/filme2.jpg",
+    trailer: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    views: 0
+  }
 ];
 
 function renderizarCatalogo() {
   const catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
-  filmes.forEach((filme) => {
+  filmes.forEach((filme, index) => {
     const div = document.createElement("div");
     div.className = "card";
     div.innerHTML = \`
       <img src="\${filme.imagem}" alt="\${filme.nome}">
       <h3>\${filme.nome}</h3>
+      <button onclick="verTrailer('\${filme.trailer}')">🎬 Ver Trailer</button>
+      <button onclick="contarVisualizacao(\${index})">👁️ Visualizações: <span id="views\${index}">\${filme.views}</span></button>
     \`;
     catalogo.appendChild(div);
   });
+}
+
+function verTrailer(link) {
+  window.open(link, "_blank");
+}
+
+function contarVisualizacao(index) {
+  filmes[index].views++;
+  document.getElementById("views" + index).textContent = filmes[index].views;
 }
 
 function filtrar() {
@@ -24,13 +43,15 @@ function filtrar() {
   const catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
   filmes
-    .filter((f) => f.nome.toLowerCase().includes(valor))
-    .forEach((filme) => {
+    .filter(filme => filme.nome.toLowerCase().includes(valor))
+    .forEach((filme, index) => {
       const div = document.createElement("div");
       div.className = "card";
       div.innerHTML = \`
         <img src="\${filme.imagem}" alt="\${filme.nome}">
         <h3>\${filme.nome}</h3>
+        <button onclick="verTrailer('\${filme.trailer}')">🎬 Ver Trailer</button>
+        <button onclick="contarVisualizacao(\${index})">👁️ Visualizações: <span id="views\${index}">\${filme.views}</span></button>
       \`;
       catalogo.appendChild(div);
     });
