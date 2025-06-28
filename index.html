@@ -2,23 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MozengoFlix - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MozengoFlix</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-container">
-    <h1>Bem-vindo ao MozengoFlix</h1>
-    <p>Faça login para continuar</p>
-    <select id="role">
-      <option value="usuario">Sou Usuário</option>
-      <option value="criador">Sou Criador</option>
-    </select>
-    <input type="text" id="username" placeholder="Usuário">
-    <input type="password" id="password" placeholder="Senha">
-    <button onclick="fazerLogin()">Entrar</button>
-    <p id="mensagem"></p>
-  </div>
+  <header>
+    <h1>MozengoFlix</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="creator.html">Área do Criador</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Filmes e Séries Disponíveis</h2>
+    <div id="movies-list"></div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>

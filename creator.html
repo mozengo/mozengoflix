@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Área do Criador - MozengoFlix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Área do Criador</h1>
+    <a href="index.html">Voltar ao Home</a>
+  </header>
+  <main>
+    <div id="login-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuário" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+    <div id="creator-section" style="display:none;">
+      <h2>Adicionar Novo Filme</h2>
+      <form id="movie-form">
+        <input type="text" id="movie-title" placeholder="Título" required><br>
+        <input type="text" id="movie-image" placeholder="URL da Imagem"><br>
+        <textarea id="movie-desc" placeholder="Descrição"></textarea><br>
+        <button type="submit">Adicionar Filme</button>
+      </form>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
