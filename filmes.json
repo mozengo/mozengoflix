@@ -1,3 +1,12 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (!loggedInUser) {
+      alert('Você precisa estar logado para ver esta página!');
+      window.location.href = 'index.html'; // Redireciona pro login
+    }
+  });
+</script>
 [
   {
     "titulo": "O Poderoso Chefão",
